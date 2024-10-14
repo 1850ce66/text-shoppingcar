@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="bs購物車.css">
+    <title>CH11.Cart-Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light ">
+        <h1><a href="Vue 3 實戰影音課程.html">sweethouse經典法式甜點</a></h1>
+    <ul class="d-flex justify-content-between">
+      <li><a href="Vue 3 實戰影音課程-關於我們.html">關於我們</a></li>
+      <li><a href="Vue 3 實戰影音課程-原料與組成.html">原料與組成</a></li>
+      <li><a href="Vue 3 實戰影音課程-產品.html">相關產品</a></li>
+      <li><a href="Vue 3 實戰影音課程-購物須知.html">購物須知</a></li>
+      <li><a href="Vue 3 實戰影音課程-我的最愛.html">我的最愛</a></li>
+        <div class="dropdown ml-auto">
+            <button class="btn btn-cart btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-cart text-dark fa-2x"></i>
+                <span class="badge badge-pill badge-danger">9</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" style="min-width: 300px" aria-labelledby="dropdownMenuButton">
+                <div class="p-3">
+                    <table class="table table-sm" id="cartTable">
+                        <h6>已選擇商品</h6>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle text-center">
+                                    <a href="#removeModal" data-price="150" data-title="鹽之花焦糖蛋糕" data-toggle="modal"
+                                        data-target="#removeModal"><i class="far fa-trash-alt "></i></a>
+                                </td>
+                                <td class="align-middle">鹽之花焦糖蛋糕</td>
+                                <td class="align-middle">1件</td>
+                                <td class="align-middle text-right">$150</td>
+                            </tr>
+                            <tr>
+                                <td class="align-middle text-center">
+                                    <a href="#removeModal" data-price="120" data-title="鹽之花冰淇淋" data-toggle="modal"
+                                        data-target="#removeModal"><i class="far fa-trash-alt "></i></a>
+                                </td>
+                                <td class="align-middle">鹽之花冰淇淋</td>
+                                <td class="align-middle">1件</td>
+                                <td class="align-middle text-right">$120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" class="btn btn-block btn-primary btn-sm text-white">確認結帳</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <h2>選擇您專屬的幸福</h2>
+        <p>每一種甜點都值得您細細品嘗，觸動您的味蕾，感受最道地的法式甜點</p>
+      </div>
+      <div class="content d-flex  justify-content-between ">
+        <ul class="list ">
+            <li>甜點總類</li>
+            <li><a href="Vue 3 實戰影音課程-產品.html">全部</a></li>
+            <li><a href="vue實戰影音課程-產品-蛋糕.html">蛋糕</a></li>
+            <li><a href="vue3實戰影音課程-產品-酥皮.html">酥皮</a></li>
+            <li><a href="Vue 3 實戰影音課程-產品-布丁.html">布丁</a></li>
+            <li><a href="Vue 3 實戰影音課程-相關產品-其他.html">其他</a></li>
+          </ul>
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pane-1" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 my-3">
+                                <div class="card text-center h-100 border-0 box-shadow"> 
+                                    <img src="https://img.shoplineapp.com/media/image_clips/5fead6f2618401002309c39b/original.png?1609225970" alt="Butter Roll">
+                                        <div class="card-body">
+                                            <p>鹽可頌</p>
+                                            <p>特價$90</p>
+                                            <p><span>原價$100</span></p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <button class="check"><a href="Vue 3 實戰影音課程-相關產品-鹽可頌.html">查看商品</a></button>
+                                        <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=90 data-title="鹽可頌"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 my-3">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://img.shoplineapp.com/media/image_clips/5fead6eb538eaa46ea97a708/original.png?1609225962" alt="gelato">
+                                    <div class="card-body">
+                                        <p>鹽之花冰淇淋</p>
+                                        <p>特價$120</p>
+                                        <p><span>原價$150</span></p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <div class="btn-group " role="group" aria-label="First group">
+                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-鹽之花冰淇淋.html">查看商品</a></button>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=120 data-title="鹽之花冰淇淋"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-3">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://img.shoplineapp.com/media/image_clips/5fead6e3538eaa001497aa99/original.png?1609225955" alt="Fleur de sel de Guerande">
+                                    <div class="card-body">
+                                        <p>鹽之花焦糖蛋糕</p>
+                                        <p>特價$150</p>
+                                        <p><span>原價$180</span></p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <button class="check"><a href="Vue 3 實戰影音課程-相關產品-鹽之花焦糖蛋糕.html">查看商品</a></button>
+                                        <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=150 data-title="鹽之花焦糖蛋糕"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://i.pinimg.com/564x/9e/53/01/9e5301a28a527b266000153b1cea9865.jpg" alt="Burnt Cream">
+                                    <div class="card-body">
+                                        <p>烤布蕾</p>
+                                        <p>特價$40</p>
+                                        <p><span>原價$50</span></p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <div class="btn-group " role="group" aria-label="First group">
+                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-烤布蕾.html">查看商品</a></button>
+                                        </div>
+                                        <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=40 data-title="烤布蕾"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://i.pinimg.com/564x/8b/45/a1/8b45a15da55eed3b913fd96c7f433f54.jpg" alt="Palmier">
+                                    <div class="card-body">
+                                        <p>蝴蝶酥</p>
+                                        <p>特價$80</p>
+                                         <p><span>原價$110</span></p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <div class="btn-group " role="group" aria-label="First group">
+                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-蝴蝶酥.html">查看商品</a></button>
+                                        </div>
+                                        <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=80 data-title="蝴蝶酥"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                    </div>
+                                </div>
+                            </div>
+                                    <div class="col-md-4 mt-4">
+                                        <div class="card text-center h-100 border-0 box-shadow">
+                                            <img src="https://ciao.kitchen/wp-content/uploads/2022/10/Matcha-Madeleine-003-500x500.jpg" alt="madeleine">
+                                            <div class="card-body">
+                                                <p>瑪德蓮蛋糕</p>
+           n                                    <p><span>特價$100</span></p> 
+                                            </div>
+                                            <div class="card-footer border-top-0 bg-white">
+                                                <div class="btn-group " role="group" aria-label="First group">
+                                                    <button class="check"><a href="Vue 3 實戰影音課程-相關產品-瑪德蓮蛋糕.html">查看商品</a></button>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=100 data-title="瑪德蓮蛋糕"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://www.tw-cosmos.com/wp-content/uploads/2021/12/%E7%91%9E%E7%A9%97%E5%A4%A9%E5%90%88%E5%9C%8B%E9%9A%9B%E8%A7%80%E5%85%89%E9%85%92%E5%BA%97%E8%A6%86%E7%9B%86%E5%AD%90%E6%AD%8C%E5%8A%87%E9%99%A2%E8%9B%8B%E7%B3%95-scaled.jpg" alt="opear">
+                                                    <div class="card-body">
+                                                        <p>歌劇院蛋糕          </p>
+                                                        <p><span>特價$250</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-歌劇院蛋糕.html">查看商品</a></button>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=250 data-title="歌劇院蛋糕"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                        </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/b57348f4fd1b5b234444d2e6135bc454/Derivates/b90f071945236c38521a46669e008bb2e59a3740.jpg" alt="Fondant au chocolat">
+                                                    <div class="card-body">
+                                                        <p>熔岩巧克力蛋糕</p>
+                                                        <p><span>特價$100</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-熔岩巧克力蛋糕.html">查看商品</a></button>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=100 data-title="熔岩巧克力蛋糕"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                        </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://french-nautilus.com/wp-content/uploads/2021/11/12.jpg" alt="Kouglof">
+                                                    <div class="card-body">
+                                                        <p>咕咕霍夫</p>
+                                                        <p><span>特價$300</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-咕咕霍夫.html">查看商品</a></button>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=300 data-title="咕咕霍夫"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://shoplineimg.com/5e7d76c565b7fe000a2e1ae0/635fbbc119a4f50031265936/800x.jpg?" alt="Flan à la vanille">
+                                                    <div class="card-body">
+                                                        <p>法式布丁塔</p>
+                                                      <p><span>特價$150</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-法式布丁塔.html">查看商品</a></button>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=150 data-title="法式布丁塔"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://ladymoko.com/wp-content/uploads/20200601230938_43.jpg" alt="Flan à la vanille">
+                                                    <div class="card-body">
+                                                        <p>法式抹茶布丁塔</p>
+                                                         <p><span>特價$150</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-法式抹茶布丁塔.html">查看商品</a></button>
+                                                           </div>
+                                                           <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=150 data-title="法式抹茶布丁塔"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://cdn.bella.tw/files-20220106/FotoJet%20(5)%20(1)(1).jpg" alt="galette des Rois">
+                                                    <div class="card-body">
+                                                        <p>國王派          </p>
+                                                        <p><span>特價$350</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-國王派.html">查看商品</a></button>
+                                                           </div>
+                                                           <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=350 data-title="國王派"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                          </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div class="card text-center h-100 border-0 box-shadow">
+                                                    <img src="https://i.pinimg.com/564x/1a/01/05/1a0105ad10e396a6f854972f84fa2064.jpg" alt="Quiche">
+                                                    <div class="card-body">
+                                                        <p>法式百里香洋蔥鹹派</p>
+                                                     <p><span>特價$370</span></p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0 bg-white">
+                                                        <div class="btn-group " role="group" aria-label="First group">
+                                                            <button class="check"><a href="Vue 3 實戰影音課程-相關產品-法國百里香洋蔥鹹派.html">查看商品</a></button>
+                                                           </div>
+                                                           <a href="#" class="btn btn-outline-secondary btn-sm mt-2 d-block btn-add-to-cart" data-price=370 data-title="法式百里香洋蔥鹹派"><i class="fas fa-shopping-cart mr-1"></i>加入購物車</a>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+   
+                    </div>
+                </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#removeModal').on('show.bs.modal', function (event) {
+                var btn = $(event.relatedTarget);
+                var title = btn.data('title');
+                var price = btn.data('price');
+                var modal = $(this);
+                modal.find('.modal-title').text('確認刪除 ' + title);
+                modal.find('.modal-body').text('您要刪除 ' + title + ' $ ' + price + '元 嗎?');
+            });
+
+        });
+        $('.btn-add-to-cart').on('click', function (event) {
+    event.preventDefault();
+    var title = $(this).data('title');
+    var price = $(this).data('price');
+    var newRow = '<tr>' +
+      '<td class="align-middle text-center">' +
+      '<a href="#removeModal" data-title="' + title + '" data-price="' + price +
+      '" data-toggle="modal" data-target="#removeModal"><i class="far fa-trash-alt"></i></a>' +
+      '</td>' +
+      '<td class="align-middle">' + title + '</td>' +
+      '<td class="align-middle">1件</td>' +
+      '<td class="align-middle text-right">' + price + '</td>' +
+      '</tr>';
+
+    
+    $('#cartTable tbody').append(newRow);
+     
+   
+    var itemCount = $('#cartTable tbody tr').length;
+    $('.badge-danger').text(itemCount);
+  })
+
+    </script>
+
+
+</body>
+
+</html>
